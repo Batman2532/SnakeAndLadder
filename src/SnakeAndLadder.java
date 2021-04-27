@@ -12,7 +12,7 @@ public class SnakeAndLadder {
 		int position = 0;
 		System.out.println("Position of the player: "+ position);
 		
-		while ( position <= winPosition) {
+		while ( position < winPosition) {
 		if(position<0) {
 			position = 0;
 		}
@@ -27,14 +27,18 @@ public class SnakeAndLadder {
 			System.out.println("noPlay is come");
 			break;
 		case ladder:
-			
-			position=position + die;
+			if ((position+die)<=winPosition) {
+				position=position+die;
+			}
 			System.out.println("Position of the player: "+ position);
 			numberOfDie++;
 			break;
 		case snake:
 			
 			position=position - die;
+			if((position-die)<positionCheck) {
+				position=positionCheck;
+			}
 			
 			System.out.println("Position of the player: "+ position);
 			numberOfDie++;
