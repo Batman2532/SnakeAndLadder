@@ -37,14 +37,13 @@ public class SnakeAndLadder {
 		case ladder:
 			
 			if(constant) {
-				constant=false;
 				if ((player1Position+die)<=winPosition) {
 				player1Position=player1Position+die;
 			}
 				System.out.println("Position of the player1: "+ player1Position);
 //				numberOfDie++;
 			}else
-			{	constant=true;
+			{
 				if ((player2Position+die)<=winPosition) {
 					player2Position=player2Position+die;
 				}
