@@ -6,7 +6,7 @@ public class SnakeAndLadder {
 	public static final int  snake = 2;
 	public static final int  winPosition = 100;
 	public static final int  positionCheck = 0;
-	public static boolean  constant = true;
+	public static boolean  isPlay = true;
 	
 	
     public static void main(String[] args) {
@@ -24,19 +24,19 @@ public class SnakeAndLadder {
 		
 		switch(ladderSnake) {
 		case noPlay:
-			if(constant) {
+			if(isPlay) {
 				System.out.println("player1 chance skipped");
-				constant=false;
+				isPlay=!isPlay;
 			}else
 			{
 				System.out.println("player2 chance skipped");
-				constant=true;
+				isPlay=!isPlay;
 			}	
 			break;
 		
 		case ladder:
 			
-			if(constant) {
+			if(isPlay) {
 				if ((player1Position+die)<=winPosition) {
 				player1Position=player1Position+die;
 			}
@@ -52,8 +52,8 @@ public class SnakeAndLadder {
 			}	
 			break;
 		case snake:
-			if(constant)	{		
-				constant=false;
+			if(isPlay)	{		
+				isPlay=!isPlay;
 				player1Position=player1Position - die;
 				if((player1Position-die)<positionCheck) {
 					player1Position=positionCheck;
@@ -63,7 +63,7 @@ public class SnakeAndLadder {
 //				numberOfDie++;
 			}else
 			{
-				constant=true;
+				isPlay=!isPlay;
 				player2Position=player2Position - die;
 				if((player2Position-die)<positionCheck) {
 					player2Position=positionCheck;
